@@ -9,6 +9,7 @@ const PORT = process.env.PORT || 3000;
 // Habilita CORS
 app.use(cors());
 
+
 // Rota única para verificar se o VSCode está aberto
 app.get('/', async (req, res) => {
   const processes = await psList();
@@ -23,10 +24,7 @@ app.get('/', async (req, res) => {
   }
 });
 
-// Inicia o servidor
-app.listen(PORT, () => {
-  console.log(`Servidor rodando em http://localhost:${PORT}`);
-});
+app.listen(PORT)
 
 // Configuração do Discord RPC
 const clientId = '1292962395152453695';
